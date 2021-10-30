@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+button {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button {
+  display: inline-block;
+  background-color: hsl(198, 60%, 50%);
+  border: none;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(176, 68%, 64%);
+    color: black;
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 40px;
+  background-color: hsl(217, 28%, 15%);
+  ul {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.intro-image {
+  width: 100%;
+  @include center();
+  background-color: hsl(217, 28%, 15%);
+}
+
+.heading-with-wave {
+  width: 100%;
+  height: 70vh;
+  background-image: url("./images/bg-curvy-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  background-color: hsl(217, 28%, 15%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .text {
+    width: 800px;
+    text-align: center;
+    padding-top: 70px;
+    h1 {
+      font-size: 2.5rem;
+      padding-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    button {
+      padding: 15px 60px;
+      margin-top: 20px;
+      @include button();
+    }
+  }
+}
+
+.features-section {
+  width: 100%;
+  background-color: hsl(218, 28%, 13%);
+  @include center();
+  .features {
+    width: 70%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    .box {
+      @include center();
+      flex-direction: column;
+      padding: 20px 60px;
+      text-align: center;
+      h3 {
+        padding: 10px 0;
+      }
+      p {
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.productive {
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  background-color: hsl(218, 28%, 13%);
+  width: 100%;
+  .text {
+    width: 50%;
+    h1 {
+      padding-bottom: 10px;
+      font-size: 2.2rem;
+    }
+    a {
+      display: inline-block;
+      color: hsl(176, 68%, 64%);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      margin-top: 20px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .image {
+    padding: 50px;
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.testimonials-section {
+  width: 100%;
+  padding-top: 35px;
+  background-color: hsl(218, 28%, 13%);
+  background-image: url("./images/bg-quotes.png");
+  background-repeat: no-repeat;
+  background-position-x: 220px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 200px;
+  .quotes-grid-container {
+    width: 70%;
+    height: 200px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    .quote {
+      background-color: hsl(219, 30%, 18%);
+      @include center();
+      flex-direction: column;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px hsl(217, 28%, 15%);
+      p {
+        font-size: 1rem;
+      }
+      .profile {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        width: 100%;
+        img {
+          width: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        .title-card {
+          p {
+            font-size: 1.1rem;
+            font-weight: 700;
+          }
+          span {
+            font-size: 0.8rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: hsl(216, 53%, 9%);
+  .banner {
+    background-color: hsl(217, 28%, 15%);
+    width: 50%;
+    padding: 50px 20px;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    text-align: center;
+    h1 {
+      padding: 10px 0;
+    }
+    p {
+      padding-bottom: 20px;
+    }
+    .input-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      input {
+        display: block;
+        padding: 15px;
+        border-radius: 100px;
+        border: none;
+        font-family: "Quicksand", sans-serif;
+        width: 65%;
+      }
+      button {
+        width: 30%;
+        padding: 10px;
+        @include button();
+      }
+    }
+  }
+  .logo {
+    width: 120px;
+    margin-left: 30px;
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    .document {
+      flex: 20%;
+      min-width: 20%;
+      padding: 0 20px;
+      .location {
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+        img {
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+      display: flex;
+      flex-direction: column;
+      span {
+        display: block;
+        padding: 10px 0;
+      }
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+      a {
+        display: block;
+        padding: 10px 0;
+        text-decoration: none;
+        color: white;
+        opacity: 0.5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      &:last-child {
+        flex-direction: row;
+        span {
+          display: block;
+          margin: 10px;
+          width: 40px;
+          height: 40px;
+          border: 2px solid white;
+          @include center();
+          border-radius: 20px;
+          &:hover {
+            color: hsl(176, 68%, 64%);
+            border-color: hsl(176, 68%, 64%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Let's make it responsive
+@media screen and (max-width: 1122px) {
+  .testimonials-section {
+    background-position-x: 5px;
+    background-position-y: -10px;
+    padding: 20px 20px 250px 20px;
+    .quotes-grid-container {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 932px) {
+  footer {
+    .banner {
+      width: 80%;
+    }
+    .flex-container .document {
+      flex: 50%;
+      min-width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .features-section .features {
+    width: 100%;
+  }
+  .productive .image {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 804px) {
+  .intro-image img,
+  .heading-with-wave .text {
+    width: 100%;
+    padding: 20px;
+  }
+  .testimonials-section {
+    padding-bottom: 400px;
+  }
+}
+
+@media screen and (max-width: 686px) {
+  .productive {
+    flex-direction: column;
+    padding: 20px;
+    .text,
+    .image {
+      width: 100%;
+      padding: 20px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 686px) {
+  .testimonials-section {
+    padding-bottom: 600px;
+    .quotes-grid-container {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 466px) {
+  .heading-with-wave {
+    height: auto;
+  }
+  .features-section .features {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    .box {
+      padding: 20px;
+    }
+  }
+  footer {
+    .banner {
+      width: 80%;
+    }
+    .flex-container .document {
+      flex: 100%;
+      min-width: 100%;
+      text-align: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+  }
+}
